@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/michele/Documents/PERSO/FORMATION%20INGENIEUR%20IA/PROJET7/mlruns/0/6db9febf3b6b4e5a9336a53e16dbc5f4/artifacts
+end_time: 1754904696915
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6db9febf3b6b4e5a9336a53e16dbc5f4
+run_name: smoke-test
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754904696911
+status: 3
+tags: []
+user_id: michele
