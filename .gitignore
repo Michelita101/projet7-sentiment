@@ -1,7 +1,23 @@
+# Données brutes (trop volumineuses pour Git)
 data/raw/*
+
+# Données traitées (si elles deviennent trop lourdes)
+data/processed/*
+
+# Checkpoints Jupyter
 .ipynb_checkpoints/
+
+# Cache Python
 __pycache__/
 *.pyc
+
+# Fichiers MacOS inutiles
 .DS_Store
+
+# Logs MLflow
 mlruns/
-data/processed/*
+mlartifacts/
+
+# Environnements locaux
+.env
+.venv
