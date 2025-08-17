@@ -1,0 +1,4 @@
+colonne,type,description,exemple,%missing,n_uniques
+label,int64,"Sentiment binaire (0 = négatif, 4 = positif)",0,0.0,2
+text,object,Contenu textuel du tweet (anglais),"@switchfoot http://twitpic.com/2y1zl - Awww, that's a bummer.  You shoulda got D...",0.0,1581466
+len,int64,Longueur (nb de caractères) calculée,115,0.0,257
