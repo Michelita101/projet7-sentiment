@@ -68,3 +68,11 @@ conda activate sentiment-oc
 
 ## Auteur
 Projet réalisé par __Michèle Dewerpe__ dans le cadre du parcours _Ingénieur IA_ (OpenClassrooms).
+
+## Prétraitement NLP
+
+- Nettoyage des textes : URLs, mentions, hashtags, ponctuation, emojis.
+- Double pipeline : avec ou sans emojis.
+- Tokenisation + stopwords + stemming + lemmatisation.
+- Exports `.parquet` et log complet dans MLflow.
+- Variable finale prête pour vectorisation : `text_final`.
