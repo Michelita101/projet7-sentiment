@@ -1,23 +1,26 @@
-# Données brutes (trop volumineuses pour Git)
-data/raw/*
-
-# Données traitées (si elles deviennent trop lourdes)
-data/processed/*
-
-# Checkpoints Jupyter
-.ipynb_checkpoints/
-
-# Cache Python
+# Dossiers Python
 __pycache__/
 *.pyc
+.venv/
+.env
 
-# Fichiers MacOS inutiles
+# Jupyter
+.ipynb_checkpoints/
+
+# Fichiers système Mac
 .DS_Store
 
-# Logs MLflow
+# Logs & runs
 mlruns/
-mlartifacts/
+reports/logs/
 
-# Environnements locaux
-.env
-.venv
+# Données volumineuses
+data/
+models/
+models/**/*.h5
+models/**/*.pt
+models/**/pytorch_model.bin
+
+# Streamlit & VSCode
+.streamlit/
+.vscode/
