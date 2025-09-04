@@ -1,9 +1,11 @@
-name: ci
+name: CI
+
 on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,13 +21,18 @@ jobs:
           pip install -r requirements-deploy.txt
           pip install pytest uvicorn fastapi
 
-      - name: Launch FastAPI server
+      - name: Launch FastAPI server in background
         run: |
-          export PYTHONPATH=.
-          KMP_DUPLICATE_LIB_OK=TRUE nohup uvicorn src.serving_fastapi:app --host 127.0.0.1 --port 8000 &
-          sleep 5
+          export PYTHONPATH=$PWD
+          nohup uvicorn src.serving_fastapi:app --host 127.0.0.1 --port 8000 > uvicorn.log 2>&1 &
+          sleep 15
+          echo "FastAPI server started"
+
+      - name: Check FastAPI is running
+        run: |
+          curl --fail http://127.0.0.1:8000 || (echo "API did not start" && cat uvicorn.log && exit 1)
 
       - name: Run tests
         run: |
-          export PYTHONPATH=.
+          export PYTHONPATH=$PWD
           pytest -q tests/
