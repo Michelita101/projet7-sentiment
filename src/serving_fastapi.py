@@ -15,8 +15,17 @@ LOG_FILE = "reports/logs/api.log"
 # ========== INITIALISATION ==========
 app = FastAPI(title="Sentiment Analysis API", description="Prédisez le sentiment d'un tweet.", version="1.0")
 
-tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
-model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
+# Chargement modèle/tokenizer local ou distant via Hugging Face
+hf_token = os.getenv("HF_TOKEN")
+
+# Utilise le modèle local si pas de token, sinon Hugging Face
+if hf_token:
+    model_name = "Michelita101/bert_sentiment"  # change ce nom si besoin
+    tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token)
+    model = AutoModelForSequenceClassification.from_pretrained(model_name, token=hf_token)
+else:
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
+    model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
 
 # ========== LOGGING ==========
 os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
