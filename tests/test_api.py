@@ -1,3 +1,5 @@
+# test mis à jour pour relancer CI
+
 import requests
 
 def test_api_responds():
