@@ -10,16 +10,19 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install deps
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-deploy.txt
           pip install pytest uvicorn fastapi
 
-      - name: Lancer FastAPI (background)
+      - name: Run FastAPI in background
         run: |
+          export PYTHONPATH=.
           uvicorn src.serving_fastapi:app --host 127.0.0.1 --port 8000 --reload &
-          sleep 3
+          sleep 5
 
       - name: Run tests
-        run: pytest -q
+        run: |
+          export PYTHONPATH=.
+          pytest -q
