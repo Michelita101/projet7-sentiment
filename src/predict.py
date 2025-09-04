@@ -1,4 +1,5 @@
 # src/predict.py
+# Ce fichier effectue une prédiction locale
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
