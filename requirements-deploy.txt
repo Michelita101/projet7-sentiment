@@ -1,1 +1,18 @@
+# --- Core ML libraries ---
+torch
+transformers
+scikit-learn
+numpy
+pandas
+
+# --- Web API ---
+fastapi
+uvicorn
+
+# --- Tests ---
+pytest
 requests
+
+# --- Optionnels utiles (log, encodage, etc.) ---
+python-dotenv
+loguru
