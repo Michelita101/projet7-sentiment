@@ -20,12 +20,12 @@ hf_token = os.getenv("HF_TOKEN")
 
 # Utilise le modèle local si pas de token, sinon Hugging Face
 if hf_token:
-    model_name = "Michelita101/bert_sentiment"  # change ce nom si besoin
+    model_name = "Michelita/bert_sentiment"  # change ce nom si besoin
     tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token)
     model = AutoModelForSequenceClassification.from_pretrained(model_name, token=hf_token)
 else:
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
+    tokenizer = AutoTokenizer.from_pretrained("models/bert_sentiment")
+    model = AutoModelForSequenceClassification.from_pretrained("models/bert_sentiment")
 
 # ========== LOGGING ==========
 os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)

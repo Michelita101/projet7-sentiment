@@ -6,6 +6,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,6 +27,7 @@ jobs:
       - name: Launch FastAPI server in background
         run: |
           export PYTHONPATH=$PWD
+          export HF_TOKEN=${{ secrets.HF_TOKEN }}
           nohup uvicorn src.serving_fastapi:app --host 127.0.0.1 --port 8000 > uvicorn.log 2>&1 &
           sleep 15
           echo "FastAPI server started"
