@@ -24,3 +24,5 @@ models/**/pytorch_model.bin
 # Streamlit & VSCode
 .streamlit/
 .vscode/
+BLOG.pages
+arborescence.txt
