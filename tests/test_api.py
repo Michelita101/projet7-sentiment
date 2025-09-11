@@ -3,7 +3,7 @@
 import requests
 
 def test_api_responds():
-    # Remplace par l'URL de ton API déployée plus tard
+    # Remplacer par l'URL de l'API déployée plus tard si nécessaire
     url = "http://127.0.0.1:8000/"
     response = requests.get(url)
     assert response.status_code == 200
