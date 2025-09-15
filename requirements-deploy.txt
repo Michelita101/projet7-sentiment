@@ -23,3 +23,8 @@ requests
 python-dotenv
 loguru
 mlflow
+joblib
+
+# --- Login Azure ---
+opencensus-ext-azure
+opencensus
