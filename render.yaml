@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: bert-sentiment-api
+    env: python
+    buildCommand: pip install -r requirements-deploy.txt
+    startCommand: uvicorn src.serving_fastapi:app --host 0.0.0.0 --port 8000
+    plan: free
