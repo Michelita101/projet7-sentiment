@@ -8,6 +8,7 @@ jobs:
 
     env:
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      APPINSIGHTS_CONNECTION_STRING: ${{ secrets.APPINSIGHTS_CONNECTION_STRING }}
 
     steps:
       - name: Checkout code
