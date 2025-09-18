@@ -12,12 +12,22 @@ import os
 
 # ================== ENVIRONNEMENT & LOGGING AZURE ==================
 
+# Charger les variables d'environnement
 load_dotenv()
+
+# Récupérer la clé de connexion Application Insights
 instrumentation_key = os.getenv("APPINSIGHTS_CONNECTION_STRING")
 
+# Configurer le logger Azure
 logger_azure = logging.getLogger("azure")
-logger_azure.addHandler(AzureLogHandler(connection_string=instrumentation_key))
 logger_azure.setLevel(logging.INFO)
+
+if instrumentation_key:
+    handler = AzureLogHandler(connection_string=instrumentation_key)
+    logger_azure.addHandler(handler)
+    logger_azure.info("Azure Application Insights logging is enabled.")
+else:
+    logger_azure.warning("APPINSIGHTS_CONNECTION_STRING not found. Azure logging is disabled.")
 
 # ================== LOGGING LOCAL ==================
 
