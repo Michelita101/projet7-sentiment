@@ -16,6 +16,7 @@ reports/logs/
 
 # Données volumineuses
 data/
+!data/logo.png
 models/
 models/**/*.h5
 models/**/*.pt
