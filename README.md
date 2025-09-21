@@ -189,5 +189,11 @@ conda activate sentiment-oc
 - Choix d’un modèle final après optimisation (hyperparamètres) et export du pipeline.
 - Blog explicatif sur le suivi post-déploiement (monitoring, dérive, logs)
 
+## Guide de Déploiement
+
+Un guide pas à pas est disponible pour activer l’ensemble des services (API, Streamlit, Azure, Render, etc.).
+
+[Lire le guide complet de déploiement](README_DEPLOIEMENT.md)
+
 ## Auteur
 Projet réalisé par __Michèle Dewerpe__ dans le cadre du parcours _Ingénieur IA_ (OpenClassrooms).
